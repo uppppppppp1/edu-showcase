@@ -1,0 +1,69 @@
+title: 教学成果奖材料展示
+description: 教学成果奖申报材料公开展示平台
+lang: zh-CN
+
+collections_dir: _collections
+
+collections:
+  student_papers:
+    output: true
+    permalink: /student/papers/:name/
+  student_awards:
+    output: true
+    permalink: /student/awards/:name/
+  student_startups:
+    output: true
+    permalink: /student/startups/:name/
+  teacher_awards:
+    output: true
+    permalink: /teacher/awards/:name/
+  teacher_projects:
+    output: true
+    permalink: /teacher/projects/:name/
+  teacher_publications:
+    output: true
+    permalink: /teacher/publications/:name/
+  domestic_university:
+    output: true
+    permalink: /domestic/university/:name/
+  domestic_school:
+    output: true
+    permalink: /domestic/school/:name/
+  xiaohuashi:
+    output: true
+    permalink: /domestic/xiaohuashi/:name/
+  international:
+    output: true
+    permalink: /international/:name/
+
+defaults:
+  - scope: { path: "", type: "student_papers" }
+    values: { layout: "item", section: "student", section_label: "学生培养", category: "papers", category_label: "学生优秀论文" }
+  - scope: { path: "", type: "student_awards" }
+    values: { layout: "item", section: "student", section_label: "学生培养", category: "awards", category_label: "学生竞赛获奖" }
+  - scope: { path: "", type: "student_startups" }
+    values: { layout: "item", section: "student", section_label: "学生培养", category: "startups", category_label: "学生创业成果" }
+  - scope: { path: "", type: "teacher_awards" }
+    values: { layout: "item", section: "teacher", section_label: "教师成果", category: "awards", category_label: "教师获奖" }
+  - scope: { path: "", type: "teacher_projects" }
+    values: { layout: "item", section: "teacher", section_label: "教师成果", category: "projects", category_label: "人才培养项目立项" }
+  - scope: { path: "", type: "teacher_publications" }
+    values: { layout: "item", section: "teacher", section_label: "教师成果", category: "publications", category_label: "教材、专著出版" }
+  - scope: { path: "", type: "domestic_university" }
+    values: { layout: "item", section: "domestic", section_label: "国内影响力", category: "university", category_label: "高校应用推广证明材料" }
+  - scope: { path: "", type: "domestic_school" }
+    values: { layout: "item", section: "domestic", section_label: "国内影响力", category: "school", category_label: "中小学应用推广证明材料" }
+  - scope: { path: "", type: "xiaohuashi" }
+    values: { layout: "item", section: "domestic", section_label: "国内影响力", category: "xiaohuashi", category_label: "小花狮系列产品应用" }
+  - scope: { path: "", type: "international" }
+    values: { layout: "item", section: "international", section_label: "国际影响力", category: "international", category_label: "国际影响力" }
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - docs/superpowers
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
