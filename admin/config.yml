@@ -12,7 +12,7 @@ locale: zh_Hans
 
 collections:
   - name: student_papers
-    label: "1-1 学生优秀论文"
+    label: "学生优秀论文"
     folder: _collections/_student_papers
     create: true
     slug: "{{year}}-{{slug}}"
@@ -40,7 +40,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: student_awards
-    label: "1-2 学生竞赛获奖"
+    label: "学生竞赛获奖"
     folder: _collections/_student_awards
     create: true
     slug: "{{year}}-{{slug}}"
@@ -68,7 +68,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: student_startups
-    label: "1-3 学生创业成果"
+    label: "学生创业成果"
     folder: _collections/_student_startups
     create: true
     slug: "{{year}}-{{slug}}"
@@ -96,7 +96,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: teacher_awards
-    label: "2-1 教师获奖"
+    label: "教师获奖"
     folder: _collections/_teacher_awards
     create: true
     slug: "{{year}}-{{slug}}"
@@ -120,7 +120,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: teacher_projects
-    label: "2-2 人才培养项目立项"
+    label: "人才培养项目立项"
     folder: _collections/_teacher_projects
     create: true
     slug: "{{year}}-{{slug}}"
@@ -147,7 +147,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: teacher_publications
-    label: "2-3 教材、专著出版"
+    label: "教材、专著出版"
     folder: _collections/_teacher_publications
     create: true
     slug: "{{year}}-{{slug}}"
@@ -171,7 +171,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: domestic_university
-    label: "3-1 高校应用推广证明材料"
+    label: "高校应用推广证明材料"
     folder: _collections/_domestic_university
     create: true
     slug: "{{year}}-{{slug}}"
@@ -194,7 +194,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: domestic_school
-    label: "3-2 中小学应用推广证明材料"
+    label: "中小学应用推广证明材料"
     folder: _collections/_domestic_school
     create: true
     slug: "{{year}}-{{slug}}"
@@ -217,7 +217,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: xiaohuashi
-    label: "3-3 小花狮系列产品应用"
+    label: "小花狮系列产品应用"
     folder: _collections/_xiaohuashi
     create: true
     slug: "{{year}}-{{slug}}"
@@ -240,7 +240,7 @@ collections:
       - { name: featured, label: 重点展示, widget: boolean, default: false }
 
   - name: international
-    label: "4 国际影响力"
+    label: "国际影响力"
     folder: _collections/_international
     create: true
     slug: "{{year}}-{{slug}}"
