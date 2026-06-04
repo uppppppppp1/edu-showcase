@@ -1,0 +1,264 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/edu_showcase
+  branch: main
+  auth_type: pkce
+  app_id: YOUR_OAUTH_APP_CLIENT_ID
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+locale: zh_Hans
+
+collections:
+  - name: student_papers
+    label: "1-1 学生优秀论文"
+    folder: _collections/_student_papers
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: author, label: 作者, widget: string }
+      - { name: journal, label: 期刊/会议名称, widget: string, required: false }
+      - name: level
+        label: 级别
+        widget: select
+        options: ["校级", "省级", "国家级"]
+        required: false
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: student_awards
+    label: "1-2 学生竞赛获奖"
+    folder: _collections/_student_awards
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: author, label: 学生姓名, widget: string }
+      - { name: competition, label: 竞赛名称, widget: string }
+      - name: award
+        label: 奖项等级
+        widget: select
+        options: ["特等奖", "一等奖", "二等奖", "三等奖", "优秀奖"]
+        required: false
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: student_startups
+    label: "1-3 学生创业成果"
+    folder: _collections/_student_startups
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: author, label: 负责人, widget: string }
+      - { name: project_name, label: 项目名称, widget: string }
+      - name: stage
+        label: 阶段
+        widget: select
+        options: ["立项", "孵化", "落地"]
+        required: false
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: teacher_awards
+    label: "2-1 教师获奖"
+    folder: _collections/_teacher_awards
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: author, label: 获奖教师, widget: string }
+      - { name: award_name, label: 奖项名称, widget: string }
+      - { name: organization, label: 颁奖单位, widget: string }
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: teacher_projects
+    label: "2-2 人才培养项目立项"
+    folder: _collections/_teacher_projects
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 项目名称, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: author, label: 负责人, widget: string }
+      - name: project_type
+        label: 项目类型
+        widget: select
+        options: ["国家级", "省级", "校级"]
+      - { name: funding, label: 经费（万元）, widget: string, required: false }
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: teacher_publications
+    label: "2-3 教材、专著出版"
+    folder: _collections/_teacher_publications
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 书名, widget: string }
+      - { name: year, label: 出版年份, widget: number, default: 2024 }
+      - { name: author, label: 作者, widget: string }
+      - { name: publisher, label: 出版社, widget: string }
+      - { name: isbn, label: ISBN, widget: string, required: false }
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 封面图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: domestic_university
+    label: "3-1 高校应用推广证明材料"
+    folder: _collections/_domestic_university
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: institution, label: 学校名称, widget: string }
+      - { name: province, label: 省份, widget: string, required: false }
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 证明材料文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: domestic_school
+    label: "3-2 中小学应用推广证明材料"
+    folder: _collections/_domestic_school
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: school_name, label: 学校名称, widget: string }
+      - { name: region, label: 地区, widget: string, required: false }
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 证明材料文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: xiaohuashi
+    label: "3-3 小花狮系列产品应用"
+    folder: _collections/_xiaohuashi
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: product_name, label: 产品名称, widget: string }
+      - { name: usage_count, label: 应用数量, widget: string, required: false }
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
+
+  - name: international
+    label: "4 国际影响力"
+    folder: _collections/_international
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { name: title, label: 标题, widget: string }
+      - { name: year, label: 年份, widget: number, default: 2024 }
+      - { name: author, label: 负责人, widget: string }
+      - { name: country, label: 国家/地区, widget: string }
+      - { name: organization, label: 合作机构, widget: string, required: false }
+      - { name: description, label: 说明, widget: text, required: false }
+      - name: images
+        label: 图片
+        widget: list
+        required: false
+        field: { name: image, label: 图片, widget: image }
+      - name: files
+        label: 文件
+        widget: list
+        required: false
+        field: { name: file, label: 文件, widget: file }
+      - { name: featured, label: 重点展示, widget: boolean, default: false }
