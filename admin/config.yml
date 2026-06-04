@@ -2,8 +2,6 @@ backend:
   name: github
   repo: uppppppppp1/edu-showcase
   branch: main
-  auth_type: pkce
-  app_id: Ov23li9hnqQMqnVaJ3g4
 
 media_folder: assets/uploads
 public_folder: /assets/uploads
