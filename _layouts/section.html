@@ -10,7 +10,6 @@ layout: default
   {% for sub in page.subcategories %}
   {% assign col = site[sub.collection] %}
   <a class="subcategory-card" href="{{ sub.url | relative_url }}">
-    <div class="sub-label">{{ sub.number }}</div>
     <div class="sub-title">{{ sub.label }}</div>
     <div class="sub-count">{{ col.size }} 项材料</div>
   </a>
