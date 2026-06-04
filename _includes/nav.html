@@ -1,0 +1,22 @@
+<nav class="site-nav">
+  <div class="nav-inner container">
+    <a class="nav-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="nav-toggle" aria-label="菜单" onclick="this.closest('nav').classList.toggle('nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu">
+      {% for item in site.data.nav %}
+      <li class="nav-item{% if item.children.size > 0 %} has-dropdown{% endif %}">
+        <a href="{{ item.url | relative_url }}">{{ item.label }}</a>
+        {% if item.children.size > 0 %}
+        <ul class="nav-dropdown">
+          {% for child in item.children %}
+          <li><a href="{{ child.url | relative_url }}">{{ child.label }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

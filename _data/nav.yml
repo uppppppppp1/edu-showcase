@@ -1,0 +1,34 @@
+- id: student
+  label: "1 学生培养"
+  url: /student/
+  children:
+    - label: "1-1 学生优秀论文"
+      url: /student/papers/
+    - label: "1-2 学生竞赛获奖"
+      url: /student/awards/
+    - label: "1-3 学生创业成果"
+      url: /student/startups/
+- id: teacher
+  label: "2 教师成果"
+  url: /teacher/
+  children:
+    - label: "2-1 教师获奖"
+      url: /teacher/awards/
+    - label: "2-2 人才培养项目立项"
+      url: /teacher/projects/
+    - label: "2-3 教材、专著出版"
+      url: /teacher/publications/
+- id: domestic
+  label: "3 国内影响力"
+  url: /domestic/
+  children:
+    - label: "3-1 高校应用推广证明材料"
+      url: /domestic/university/
+    - label: "3-2 中小学应用推广证明材料"
+      url: /domestic/school/
+    - label: "3-3 小花狮系列产品应用"
+      url: /domestic/xiaohuashi/
+- id: international
+  label: "4 国际影响力"
+  url: /international/
+  children: []

@@ -1,0 +1,13 @@
+{% if include.crumbs %}
+<nav class="breadcrumb" aria-label="面包屑导航">
+  <a href="{{ '/' | relative_url }}">首页</a>
+  {% for crumb in include.crumbs %}
+  <span class="breadcrumb-sep">›</span>
+  {% if forloop.last %}
+  <span>{{ crumb.label }}</span>
+  {% else %}
+  <a href="{{ crumb.url | relative_url }}">{{ crumb.label }}</a>
+  {% endif %}
+  {% endfor %}
+</nav>
+{% endif %}
