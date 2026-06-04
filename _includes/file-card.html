@@ -1,0 +1,30 @@
+{% if include.files and include.files.size > 0 %}
+<div class="file-list">
+  {% for file in include.files %}
+  {% assign ext = file | split: "." | last | downcase %}
+  <div class="file-card">
+    {% if ext == "pdf" %}
+      <span class="file-icon">📄</span>
+    {% elsif ext == "doc" or ext == "docx" %}
+      <span class="file-icon">📝</span>
+    {% elsif ext == "jpg" or ext == "jpeg" or ext == "png" or ext == "gif" %}
+      <span class="file-icon">🖼️</span>
+    {% elsif ext == "ppt" or ext == "pptx" %}
+      <span class="file-icon">📊</span>
+    {% else %}
+      <span class="file-icon">📎</span>
+    {% endif %}
+    <div class="file-info">
+      <div class="file-name">{{ file | split: "/" | last }}</div>
+      <div class="file-type">{{ ext }}</div>
+    </div>
+    <a class="file-download" href="{{ file | relative_url }}" download>下载</a>
+  </div>
+  {% if ext == "pdf" %}
+  <div class="pdf-preview">
+    <iframe src="{{ file | relative_url }}" title="PDF 预览"></iframe>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endif %}

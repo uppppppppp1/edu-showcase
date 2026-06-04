@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% assign s_count = site.student_papers.size | plus: site.student_awards.size | plus: site.student_startups.size %}
+{% assign t_count = site.teacher_awards.size | plus: site.teacher_projects.size | plus: site.teacher_publications.size %}
+{% assign d_count = site.domestic_university.size | plus: site.domestic_school.size | plus: site.xiaohuashi.size %}
+{% assign i_count = site.international.size %}
+
+<div class="page-header">
+  <h1>{{ site.title }}</h1>
+  <p class="subtitle">{{ site.description }}</p>
+</div>
+
+<div class="section-grid">
+  <a class="section-card" href="{{ '/student/' | relative_url }}">
+    <div class="card-number">01</div>
+    <div class="card-title">学生培养</div>
+    <div class="card-desc">学生优秀论文、竞赛获奖及创业成果展示</div>
+    <div class="card-count">{{ s_count }}<span>项成果</span></div>
+  </a>
+  <a class="section-card" href="{{ '/teacher/' | relative_url }}">
+    <div class="card-number">02</div>
+    <div class="card-title">教师成果</div>
+    <div class="card-desc">教师获奖、人才培养项目立项及教材专著出版</div>
+    <div class="card-count">{{ t_count }}<span>项成果</span></div>
+  </a>
+  <a class="section-card" href="{{ '/domestic/' | relative_url }}">
+    <div class="card-number">03</div>
+    <div class="card-title">国内影响力</div>
+    <div class="card-desc">高校及中小学应用推广、小花狮系列产品应用</div>
+    <div class="card-count">{{ d_count }}<span>项成果</span></div>
+  </a>
+  <a class="section-card" href="{{ '/international/' | relative_url }}">
+    <div class="card-number">04</div>
+    <div class="card-title">国际影响力</div>
+    <div class="card-desc">国际合作与推广应用成果</div>
+    <div class="card-count">{{ i_count }}<span>项成果</span></div>
+  </a>
+</div>

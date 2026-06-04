@@ -1,0 +1,13 @@
+{% if include.images and include.images.size > 0 %}
+<div class="image-gallery">
+  {% for img in include.images %}
+  <div class="gallery-thumb" data-src="{{ img | relative_url }}">
+    <img src="{{ img | relative_url }}" alt="图片 {{ forloop.index }}" loading="lazy">
+  </div>
+  {% endfor %}
+</div>
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close">×</span>
+  <img id="lightboxImg" src="" alt="预览">
+</div>
+{% endif %}

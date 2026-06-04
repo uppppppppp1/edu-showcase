@@ -1,0 +1,61 @@
+---
+layout: default
+---
+{% assign section_url = "/" | append: page.section | append: "/" %}
+{% assign cat_url = "/" | append: page.section | append: "/" | append: page.category | append: "/" %}
+
+<nav class="breadcrumb">
+  <a href="{{ '/' | relative_url }}">首页</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="{{ section_url | relative_url }}">{{ page.section_label }}</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="{{ cat_url | relative_url }}">{{ page.category_label }}</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>{{ page.title }}</span>
+</nav>
+
+<div class="item-detail">
+  <div class="page-header">
+    <h1>{{ page.title }}</h1>
+  </div>
+
+  <div class="item-meta">
+    {% if page.author %}<div class="meta-item"><div class="meta-label">作者/负责人</div><div class="meta-value">{{ page.author }}</div></div>{% endif %}
+    {% if page.year %}<div class="meta-item"><div class="meta-label">年份</div><div class="meta-value">{{ page.year }}</div></div>{% endif %}
+    {% if page.level %}<div class="meta-item"><div class="meta-label">级别</div><div class="meta-value"><span class="tag tag-level">{{ page.level }}</span></div></div>{% endif %}
+    {% if page.journal %}<div class="meta-item"><div class="meta-label">期刊/会议</div><div class="meta-value">{{ page.journal }}</div></div>{% endif %}
+    {% if page.competition %}<div class="meta-item"><div class="meta-label">竞赛名称</div><div class="meta-value">{{ page.competition }}</div></div>{% endif %}
+    {% if page.award %}<div class="meta-item"><div class="meta-label">奖项等级</div><div class="meta-value"><span class="tag tag-level">{{ page.award }}</span></div></div>{% endif %}
+    {% if page.award_name %}<div class="meta-item"><div class="meta-label">奖项名称</div><div class="meta-value">{{ page.award_name }}</div></div>{% endif %}
+    {% if page.organization %}<div class="meta-item"><div class="meta-label">颁奖/合作单位</div><div class="meta-value">{{ page.organization }}</div></div>{% endif %}
+    {% if page.publisher %}<div class="meta-item"><div class="meta-label">出版社</div><div class="meta-value">{{ page.publisher }}</div></div>{% endif %}
+    {% if page.isbn %}<div class="meta-item"><div class="meta-label">ISBN</div><div class="meta-value">{{ page.isbn }}</div></div>{% endif %}
+    {% if page.project_type %}<div class="meta-item"><div class="meta-label">项目类型</div><div class="meta-value">{{ page.project_type }}</div></div>{% endif %}
+    {% if page.funding %}<div class="meta-item"><div class="meta-label">经费</div><div class="meta-value">{{ page.funding }}</div></div>{% endif %}
+    {% if page.institution %}<div class="meta-item"><div class="meta-label">推广学校</div><div class="meta-value">{{ page.institution }}</div></div>{% endif %}
+    {% if page.province %}<div class="meta-item"><div class="meta-label">省份</div><div class="meta-value">{{ page.province }}</div></div>{% endif %}
+    {% if page.country %}<div class="meta-item"><div class="meta-label">国家/地区</div><div class="meta-value">{{ page.country }}</div></div>{% endif %}
+    {% if page.product_name %}<div class="meta-item"><div class="meta-label">产品名称</div><div class="meta-value">{{ page.product_name }}</div></div>{% endif %}
+    {% if page.usage_count %}<div class="meta-item"><div class="meta-label">应用数量</div><div class="meta-value">{{ page.usage_count }}</div></div>{% endif %}
+  </div>
+
+  {% if page.description %}
+  <div class="item-section-title">说明</div>
+  <div class="item-description">{{ page.description }}</div>
+  {% endif %}
+
+  {% if content != "" %}
+  <div class="item-section-title">详细内容</div>
+  <div class="item-description">{{ content }}</div>
+  {% endif %}
+
+  {% if page.images and page.images.size > 0 %}
+  <div class="item-section-title">图片</div>
+  {% include image-gallery.html images=page.images %}
+  {% endif %}
+
+  {% if page.files and page.files.size > 0 %}
+  <div class="item-section-title">文件</div>
+  {% include file-card.html files=page.files %}
+  {% endif %}
+</div>
