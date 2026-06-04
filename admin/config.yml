@@ -2,6 +2,9 @@ backend:
   name: github
   repo: uppppppppp1/edu-showcase
   branch: main
+  app_id: Ov23li9hnqQMqnVaJ3g4
+
+site_url: https://uppppppppp1.github.io/edu-showcase
 
 media_folder: assets/uploads
 public_folder: /assets/uploads
